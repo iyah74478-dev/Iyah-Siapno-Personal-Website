@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #fdecef; /* soft pink */
+            color: #333;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+
+        .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);}
+        .header { display:flex; gap:30px; border-bottom:2px solid #f3dbe1; padding-bottom:25px;}
+        .photo { width:160px;height:160px;border-radius:50%;border:4px solid #f2b8c6;overflow:hidden; background:#fde3ea;}
+        .photo img { width:100%; height:100%; object-fit:cover; transition: transform 0.4s ease;}
+        .photo img:hover { transform: scale(1.08);}
+        h1 { margin:0; font-size:30px; color:#7a3f50;}
+        .subtitle { margin-top:8px; color:#a06173;}
+        nav { background:#f8cfd8; padding:15px 0; text-align:center;}
+        nav a { margin:0 15px; text-decoration:none; color:#8a4f5f; font-weight:500; position:relative; transition: color 0.3s;}
+        nav a::after { content:""; position:absolute; left:0; bottom:-5px; width:0; height:2px; background:#b76b7e; transition:width 0.3s;}
+        nav a:hover::after { width:100%; color:#b76b7e; }
+        section { margin-top:45px; }
+        h2 { font-size:22px; color:#8a4f5f; margin-bottom:10px; }
+        h2::before { content:"🌸 "; }
+        .card { background:#fff6f8; padding:20px; border-radius:14px; border-left:6px solid #f2b8c6; transition: transform 0.3s, box-shadow 0.3s;}
+        .card:hover { transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.08); }
+        footer { text-align:center; margin-top:60px; font-size:14px; color:#9a6a78; }
+
+
+        @keyframes floatHearts {
+          0% { transform: translateY(0) rotate(0deg); opacity:0; }
+          20% { opacity:1; }
+          100% { transform: translateY(-300px) rotate(360deg); opacity:0; }
+        }
+        .heart { position:fixed; bottom:-50px; font-size:18px; color:#ff6b81; animation: floatHearts 6s linear infinite; pointer-events:none;}
+        .heart:nth-child(1){ left:10%; animation-delay:0s;}
+        .heart:nth-child(2){ left:25%; animation-delay:1.2s;}
+        .heart:nth-child(3){ left:40%; animation-delay:2s;}
+        .heart:nth-child(4){ left:60%; animation-delay:0.5s;}
+        .heart:nth-child(5){ left:80%; animation-delay:1.5s;}
+
+
+        @keyframes fallPetals {
+          0%{transform:translateY(-50px) rotate(0deg); opacity:0;}
+          10%{opacity:1;}
+          100%{transform:translateY(800px) rotate(360deg); opacity:0;}
+        }
+        .petal { position:fixed; top:-50px; font-size:20px; color:#ffc0cb; animation:fallPetals 8s linear infinite; pointer-events:none; }
+        .petal:nth-child(1){ left:5%; animation-delay:0s;}
+        .petal:nth-child(2){ left:20%; animation-delay:2s;}
+        .petal:nth-child(3){ left:35%; animation-delay:1s;}
+        .petal:nth-child(4){ left:55%; animation-delay:3s;}
+        .petal:nth-child(5){ left:75%; animation-delay:0.5s;}
+        .petal:nth-child(6){ left:90%; animation-delay:2.5s;}
+
+
+        @keyframes sparkle {
+          0%{transform:scale(0); opacity:0;}
+          50%{transform:scale(1.2); opacity:1;}
+          100%{transform:scale(0); opacity:0;}
+        }
+        .sparkle { position:fixed; font-size:14px; color:#fffacd; animation:sparkle 2s ease-in-out infinite; pointer-events:none;}
+        .sparkle:nth-child(1){ left:15%; top:30%; animation-delay:0s;}
+        .sparkle:nth-child(2){ left:50%; top:50%; animation-delay:0.5s;}
+        .sparkle:nth-child(3){ left:70%; top:20%; animation-delay:1s;}
+        .sparkle:nth-child(4){ left:35%; top:70%; animation-delay:1.5s;}
+        .sparkle:nth-child(5){ left:85%; top:60%; animation-delay:2s;}
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <div class="heart">💖</div>
+    <div class="heart">💘</div>
+    <div class="heart">💞</div>
+    <div class="heart">❤️</div>
+    <div class="heart">💗</div>
+
+    <!-- Falling Petals -->
+    <div class="petal">🌸</div>
+    <div class="petal">🌺</div>
+    <div class="petal">🌷</div>
+    <div class="petal">🌸</div>
+    <div class="petal">🌺</div>
+    <div class="petal">🌷</div>
+
+    <!-- Sparkles -->
+    <div class="sparkle">✨</div>
+    <div class="sparkle">✨</div>
+    <div class="sparkle">✨</div>
+    <div class="sparkle">✨</div>
+    <div class="sparkle">✨</div>
+    
+    <nav>
+        <a href="#about">🌸 About</a>
+        <a href="#education">🌷 Education</a>
+        <a href="#skills">🌼 Skills</a>
+        <a href="#contact">🌺 Contact</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+            <div class="photo">
+                <img src="me.png">
+            </div>
+            <div>
+                <h1>Iyah Pearl Siapno</h1>
+                <p class="subtitle"></p>
+            </div>
+        </div>
+
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="card">
+                <p>Hello! I’m Iyah Pearl Siapno, a senior high school student with a creative mind and a passion for learning. I enjoy working on school projects, exploring technology, and improving my skills while preparing for future academic and career goals.</p>
+            </div>
+        </section>
+
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="card">
+                <p>Senior High School Student
+Currently studying and gaining knowledge in academics, technology, and personal development to build a strong foundation for the future.</p>
+            </div>
+        </section>
+
+
+        <section id="skills">
+            <h2>Skills & Interests</h2>
+            <div class="card"> <p>
+•Creative and aesthetic design
+•Good communication skills
+•Teamwork and responsibility
+•Interests in technology, entrepreneurship, and creative work</p>
+            </div>
+        </section>
+
+
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <div class="card">
+                <p>📧 Email: iyah74478@gmail.com<br> 🔗 0931 823 1578</p>
+            </div>
+        </section>
+
+        <footer>🌸 © 2026 Iyah Pearl Siapno • Personal Website 🌷</footer>
+
+    </div>
+
+</body>
+</html>
